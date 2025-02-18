@@ -45,7 +45,7 @@ public class ConfigComponent {
             return;
         }
 
-        if (Managers.CONFIG.currentConfig.getName().equals(name + ".th")) {
+        if (Managers.CONFIG.currentConfig.getName().equals(name + ".pulse")) {
             Render2DEngine.drawGradientRound(context.getMatrices(), posX + 5, posY, 285, 30, 4f,
                     Render2DEngine.applyOpacity(new Color(55, 44, 66, 255), getFadeFactor()),
                     Render2DEngine.applyOpacity(new Color(25, 20, 30, 255), getFadeFactor()),

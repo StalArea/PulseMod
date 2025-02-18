@@ -113,7 +113,7 @@ public final class Surround extends PlaceModule {
         if (event.getPacket() instanceof EntitySpawnS2CPacket spawn && spawn.getEntityType() == EntityType.END_CRYSTAL) {
 
             EndCrystalEntity cr = new EndCrystalEntity(mc.world, spawn.getX(), spawn.getY(), spawn.getZ());
-            cr.setId(spawn.getId());
+            cr.setId(spawn.getEntityId());
 
             if (crystalBreaker.getValue().isEnabled() && cr.squaredDistanceTo(mc.player) <= remove.getPow2Value())
                 handlePacket();

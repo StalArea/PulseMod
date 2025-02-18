@@ -13,7 +13,7 @@ import thunder.hack.utility.ThunderUtility;
 import static thunder.hack.ThunderHack.EVENT_BUS;
 
 /**
- * Class with all ThunderHack Managers' instances
+ * Class with all PulseMod Managers' instances
  *
  * @author 06ED
  * @see IManager - base interface for all managers
@@ -41,7 +41,6 @@ public class Managers {
     public static final ServerManager SERVER = new ServerManager();
     public static final ShaderManager SHADER = new ShaderManager();
     public static final SoundManager SOUND = new SoundManager();
-    public static final TelemetryManager TELEMETRY = new TelemetryManager();
     public static final CommandManager COMMAND = new CommandManager();
 
     public static void init() {
@@ -58,7 +57,6 @@ public class Managers {
             ThunderUtility.syncContributors();
             ThunderUtility.parseStarGazer();
             ThunderUtility.parseCommits();
-            TELEMETRY.fetchData();
         });
     }
 
@@ -68,6 +66,5 @@ public class Managers {
         EVENT_BUS.subscribe(PLAYER);
         EVENT_BUS.subscribe(COMBAT);
         EVENT_BUS.subscribe(ASYNC);
-        EVENT_BUS.subscribe(TELEMETRY);
     }
 }

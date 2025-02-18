@@ -89,7 +89,7 @@ public class ConfigWindow extends WindowBase {
 
             // Name
             Render2DEngine.drawRectWithOutline(context.getMatrices(), getX() + 11, configPlate.offset + getY() + 36 + getScrollOffset(), getWidth() - 52, 11, color, color2);
-            FontRenderers.sf_medium.drawString(context.getMatrices(), configPlate.name() + (Objects.equals(configPlate.name() + ".th", Managers.CONFIG.currentConfig.getName()) ? blink : "")
+            FontRenderers.sf_medium.drawString(context.getMatrices(), configPlate.name() + (Objects.equals(configPlate.name() + ".pulse", Managers.CONFIG.currentConfig.getName()) ? blink : "")
                     , getX() + 13, configPlate.offset + getY() + 40 + getScrollOffset(), textColor);
 
             // Load

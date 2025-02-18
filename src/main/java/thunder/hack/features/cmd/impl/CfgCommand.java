@@ -28,7 +28,7 @@ public class CfgCommand extends Command {
         builder.executes(context -> {
             StringBuilder configs = new StringBuilder("Configs: ");
             for (String str : Objects.requireNonNull(Managers.CONFIG.getConfigList())) {
-                configs.append("\n- " + (str.equals(Managers.CONFIG.getCurrentConfig().getName().replace(".th", "")) ? Formatting.GREEN : "")).append(str).append(Formatting.RESET);
+                configs.append("\n- " + (str.equals(Managers.CONFIG.getCurrentConfig().getName().replace(".pulse", "")) ? Formatting.GREEN : "")).append(str).append(Formatting.RESET);
             }
             sendMessage(configs.toString());
 
@@ -38,7 +38,7 @@ public class CfgCommand extends Command {
         builder.then(literal("list").executes(context -> {
             StringBuilder configs = new StringBuilder("Configs: ");
             for (String str : Objects.requireNonNull(Managers.CONFIG.getConfigList())) {
-                configs.append("\n- " + (str.equals(Managers.CONFIG.getCurrentConfig().getName().replace(".th", "")) ? Formatting.GREEN : "")).append(str).append(Formatting.RESET);
+                configs.append("\n- " + (str.equals(Managers.CONFIG.getCurrentConfig().getName().replace(".pulse", "")) ? Formatting.GREEN : "")).append(str).append(Formatting.RESET);
             }
             sendMessage(configs.toString());
 

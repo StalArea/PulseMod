@@ -17,7 +17,7 @@ import static thunder.hack.features.modules.client.ClientSettings.isRu;
 
 public class UnHook extends Module { // Йо фабос, засунь в о4ко себе фалос
     public UnHook() {
-        super("UnHook", Category.CLIENT);
+        super("Unhook", Category.CLIENT);
     }
 
     List<Module> list;
@@ -96,7 +96,7 @@ public class UnHook extends Module { // Йо фабос, засунь в о4ко
 
         // Rename cfg dir back
         try {
-            new File("XaeroWaypoints_BACKUP092738").renameTo(new File("ThunderHackRecode"));
+            new File("XaeroWaypoints_BACKUP092738").renameTo(new File("PlasmoVoice"));
         } catch (Exception e) {
         }
     }

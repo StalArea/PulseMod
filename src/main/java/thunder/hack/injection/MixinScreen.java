@@ -56,7 +56,7 @@ public abstract class MixinScreen {
         File cfgFile = new File(configPath);
         String fileName = cfgFile.getName();
 
-        if (fileName.contains(".th")) {
+        if (fileName.contains(".pulse")) {
             DialogScreen dialogScreen = new DialogScreen(
                     TextureStorage.questionPic,
                     isRu() ? "Обнаружен конфиг!" : "Config detected!",
@@ -113,7 +113,8 @@ public abstract class MixinScreen {
 
     @Inject(method = "renderPanoramaBackground", at = @At("HEAD"), cancellable = true)
     public void renderPanoramaBackgroundHook(DrawContext context, float delta, CallbackInfo ci) {
-        if (ClientSettings.customPanorama.getValue() && mc.world == null) {
+        // Removed background shader if unhook enabled
+        if (ClientSettings.customPanorama.getValue() && !ModuleManager.unHook.isEnabled() && mc.world == null) {
             ci.cancel();
             Render2DEngine.drawMainMenuShader(context.getMatrices(), 0, 0, mc.getWindow().getScaledWidth(), mc.getWindow().getScaledHeight());
         }

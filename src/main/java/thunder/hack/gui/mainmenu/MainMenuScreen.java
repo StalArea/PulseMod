@@ -92,24 +92,6 @@ public class MainMenuScreen extends Screen {
         FontRenderers.sf_medium.drawCenteredString(context.getMatrices(), "<-- Back to default menu", halfOfWidth, halfOfHeight + 70, hovered ? -1 : Render2DEngine.applyOpacity(-1, 0.6f));
         //  FontRenderers.sf_medium.drawString(context.getMatrices(), "By Pan4ur & 06ED", halfOfWidth * 2 - FontRenderers.sf_medium.getStringWidth("By Pan4ur & 06ED") - 5f, halfOfHeight * 2 - 10, Render2DEngine.applyOpacity(-1, 0.4f));
 
-        onlineText:
-        {
-            String onlineUsers = String.format("online: %s%s", Formatting.DARK_GREEN, Managers.TELEMETRY.getOnlinePlayers().size());
-
-            FontRenderers.sf_bold.drawCenteredString(context.getMatrices(), onlineUsers, halfOfWidth, halfOfHeight * 2 - 15, Color.GREEN);
-
-            context.getMatrices().push();
-            context.getMatrices().translate(halfOfWidth - 10 - FontRenderers.sf_medium.getStringWidth(onlineUsers) / 2f, halfOfHeight * 2 - 17, 0);
-            Render2DEngine.drawBloom(context.getMatrices(), Render2DEngine.applyOpacity(Color.GREEN, 0.6f), 9f);
-            context.getMatrices().pop();
-
-            context.getMatrices().push();
-            context.getMatrices().translate(halfOfWidth - 10 - FontRenderers.sf_medium.getStringWidth(onlineUsers) / 2f, halfOfHeight * 2 - 17, 0);
-            Render2DEngine.drawBloom(context.getMatrices(), Render2DEngine.applyOpacity(Color.GREEN, (float) (0.5f + (Math.sin((double) System.currentTimeMillis() / 500)) / 2f)), 9f);
-            context.getMatrices().pop();
-
-        }
-
         Render2DEngine.drawHudBase(context.getMatrices(), mc.getWindow().getScaledWidth() - 40, mc.getWindow().getScaledHeight() - 40, 30, 30, 5, Render2DEngine.isHovered(mouseX, mouseY, mc.getWindow().getScaledWidth() - 40, mc.getWindow().getScaledHeight() - 40, 30, 30) ? 0.7f : 1f);
         RenderSystem.setShaderColor(1f, 1f, 1f, Render2DEngine.isHovered(mouseX, mouseY, mc.getWindow().getScaledWidth() - 40, mc.getWindow().getScaledHeight() - 40, 30, 30) ? 0.7f : 1f);
         context.drawTexture(TextureStorage.thTeam, mc.getWindow().getScaledWidth() - 40, mc.getWindow().getScaledHeight() - 40, 30, 30, 0, 0, 30, 30, 30, 30);

@@ -244,18 +244,6 @@ public class NameTags extends Module {
                 else
                     Render2DEngine.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 13f), textWidth + 4, 11, color);
 
-                if (Managers.TELEMETRY.getOnlinePlayers().contains(ent.getGameProfile().getName())) {
-                    Render2DEngine.drawRect(context.getMatrices(), tagX - 14, (float) (posY - 13f), 12, 11, color.brighter().brighter());
-                    RenderSystem.enableBlend();
-                    RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE);
-                    Color lColor = HudEditor.getColor(0);
-                    RenderSystem.setShaderColor(lColor.getRed() / 255f, lColor.getGreen() / 255f, lColor.getBlue() / 255f, 1f);
-                    RenderSystem.setShaderTexture(0, TextureStorage.miniLogo);
-                    Render2DEngine.renderTexture(context.getMatrices(), tagX - 13, (float) (posY - 12.5f), 10, 10, 0, 0, 256, 256, 256, 256);
-                    RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
-                    RenderSystem.disableBlend();
-                }
-
                 switch (cl) {
                     case None, New -> {
 

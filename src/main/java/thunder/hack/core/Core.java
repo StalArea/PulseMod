@@ -64,9 +64,9 @@ public final class Core {
         ThunderGui.getInstance().onTick();
 
         if (ModuleManager.clickGui.getBind().getKey() == -1) {
-            Command.sendMessage(Formatting.RED + (isRu() ? "Привязка клавиш Clickgui по умолчанию -> P" : "Default clickgui keybind --> P"));
+            Command.sendMessage(Formatting.RED + (isRu() ? "Привязка клавиш Clickgui по умолчанию -> RShift" : "Default clickgui keybind --> RShift"));
             Command.sendMessage(Formatting.RED + (isRu() ? "Вы можете получить готовую конфигурацию, выполнив следующую команду -> @cfg cloudlist." : "You can obtain a pre-built configuration by executing the following command -> @cfg cloudlist."));
-            ModuleManager.clickGui.setBind(InputUtil.fromTranslationKey("key.keyboard.p").getCode(), false, false);
+            ModuleManager.clickGui.setBind(InputUtil.fromTranslationKey("key.keyboard.rshift").getCode(), false, false);
         }
 
         for (PlayerEntity p : mc.world.getPlayers()) {

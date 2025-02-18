@@ -95,7 +95,7 @@ public class Blink extends Module {
 
     @EventHandler
     public void onPacketReceive(PacketEvent.Receive event) {
-        if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket vel && vel.getId() == mc.player.getId() && disableOnVelocity.getValue())
+        if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket vel && vel.getEntityId() == mc.player.getId() && disableOnVelocity.getValue())
             disable(isRu() ? "Выключенно из-за велосити!" : "Disabled due to velocity!");
     }
 
