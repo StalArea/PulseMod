@@ -1,8 +1,7 @@
 package ru.openpulse.mod.features.modules.client;
 
-import ru.openpulse.mod.gui.windows.WindowsScreen;
-import ru.openpulse.mod.gui.windows.impl.*;
 import ru.openpulse.mod.features.modules.Module;
+import ru.openpulse.mod.gui.windows.WindowsScreen;
 import ru.openpulse.mod.gui.windows.impl.*;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.PositionSetting;

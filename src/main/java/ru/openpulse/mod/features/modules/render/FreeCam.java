@@ -6,7 +6,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import org.lwjgl.glfw.GLFW;
 import ru.openpulse.mod.events.impl.*;
-import ru.openpulse.mod.events.impl.*;
 import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.utility.player.MovementUtility;

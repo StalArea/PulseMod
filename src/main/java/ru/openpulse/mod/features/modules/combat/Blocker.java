@@ -10,7 +10,6 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3i;
 import org.jetbrains.annotations.NotNull;
 import ru.openpulse.mod.events.impl.*;
-import ru.openpulse.mod.events.impl.*;
 import ru.openpulse.mod.features.modules.base.PlaceModule;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.SettingGroup;

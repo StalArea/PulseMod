@@ -5,23 +5,24 @@ import net.minecraft.client.util.math.MatrixStack;
 import org.lwjgl.glfw.GLFW;
 import ru.openpulse.mod.PulseMod;
 import ru.openpulse.mod.core.manager.IManager;
+import ru.openpulse.mod.features.hud.HudElement;
 import ru.openpulse.mod.features.hud.impl.*;
+import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.features.modules.client.*;
 import ru.openpulse.mod.features.modules.combat.*;
 import ru.openpulse.mod.features.modules.misc.*;
 import ru.openpulse.mod.features.modules.movement.*;
-import ru.openpulse.mod.features.modules.movement.Timer;
 import ru.openpulse.mod.features.modules.player.*;
-import ru.openpulse.mod.features.modules.render.*;
 import ru.openpulse.mod.features.modules.render.Particles;
+import ru.openpulse.mod.features.modules.render.*;
 import ru.openpulse.mod.gui.clickui.ClickGUI;
 import ru.openpulse.mod.gui.font.FontRenderers;
-import ru.openpulse.mod.features.hud.HudElement;
-import ru.openpulse.mod.features.modules.Module;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")

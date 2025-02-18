@@ -18,7 +18,6 @@ import ru.openpulse.mod.features.modules.client.HudEditor;
 import ru.openpulse.mod.gui.font.Texture;
 import ru.openpulse.mod.utility.math.MathUtility;
 import ru.openpulse.mod.utility.render.shaders.*;
-import ru.openpulse.mod.utility.render.shaders.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

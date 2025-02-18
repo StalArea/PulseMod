@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
 import ru.openpulse.mod.gui.windows.WindowsScreen;
 import ru.openpulse.mod.gui.windows.impl.*;
-import ru.openpulse.mod.gui.windows.impl.*;
 
 import static ru.openpulse.mod.core.manager.IManager.mc;
 

@@ -18,7 +18,6 @@
 package ru.openpulse.mod.utility.render.shaders.satin.impl;
 
 import com.mojang.logging.LogUtils;
-import ru.openpulse.mod.utility.render.shaders.satin.api.managed.uniform.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.resource.ResourceFactory;
 import net.minecraft.util.Identifier;

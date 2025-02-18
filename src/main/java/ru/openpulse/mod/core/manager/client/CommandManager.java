@@ -6,9 +6,8 @@ import net.minecraft.client.network.ClientCommandSource;
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.NotNull;
-import ru.openpulse.mod.features.cmd.Command;
-import ru.openpulse.mod.features.cmd.impl.*;
 import ru.openpulse.mod.core.manager.IManager;
+import ru.openpulse.mod.features.cmd.Command;
 import ru.openpulse.mod.features.cmd.impl.*;
 
 import java.util.ArrayList;

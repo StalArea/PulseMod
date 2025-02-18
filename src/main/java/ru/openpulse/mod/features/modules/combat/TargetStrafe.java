@@ -13,9 +13,8 @@ import net.minecraft.util.math.Direction;
 import ru.openpulse.mod.core.Core;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
 import ru.openpulse.mod.events.impl.*;
-import ru.openpulse.mod.events.impl.*;
-import ru.openpulse.mod.injection.accesors.ISPacketEntityVelocity;
 import ru.openpulse.mod.features.modules.Module;
+import ru.openpulse.mod.injection.accesors.ISPacketEntityVelocity;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.utility.player.InventoryUtility;
 

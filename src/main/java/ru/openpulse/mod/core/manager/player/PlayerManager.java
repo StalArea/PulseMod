@@ -22,13 +22,12 @@ import org.jetbrains.annotations.NotNull;
 import ru.openpulse.mod.core.manager.IManager;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
 import ru.openpulse.mod.events.impl.*;
-import ru.openpulse.mod.events.impl.*;
-import ru.openpulse.mod.injection.accesors.IClientPlayerEntity;
 import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.features.modules.combat.Aura;
+import ru.openpulse.mod.injection.accesors.IClientPlayerEntity;
 import ru.openpulse.mod.utility.Timer;
-import ru.openpulse.mod.utility.world.ExplosionUtility;
 import ru.openpulse.mod.utility.math.MathUtility;
+import ru.openpulse.mod.utility.world.ExplosionUtility;
 
 import java.util.ArrayDeque;
 
