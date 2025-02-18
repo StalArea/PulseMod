@@ -24,7 +24,7 @@
   "environment": "client",
   "entrypoints": {
     "main": [
-      "thunder.hack.ThunderHack"
+      "ru.openpulse.mod.PulseMod"
     ]
   },
   "contact": {
