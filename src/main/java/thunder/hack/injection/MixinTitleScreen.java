@@ -39,15 +39,15 @@ public class MixinTitleScreen extends Screen {
             DialogScreen dialogScreen2 = new DialogScreen(
                     TextureStorage.cutie,
                     isRu() ? "Спасибо что скачали ThunderHack!" : "Thank you for downloading ThunderHack!",
-                    isRu() ? "Меню с функциями клиента открывается на клавишу - P" : "Menu with client modules is opened with the key - P",
+                    isRu() ? "Меню с функциями клиента открывается на клавишу - RShift" : "Menu with client modules is opened with the key - P",
                     isRu() ? "Зайти в майн" : "Join on minecraft",
                     isRu() ? "Закрыть майн" : "Close minecraft",
                     () -> {
-                        ModuleManager.clickGui.setBind(InputUtil.fromTranslationKey("key.keyboard.p").getCode(), false, false);
+                        ModuleManager.clickGui.setBind(InputUtil.fromTranslationKey("key.keyboard.right.shift").getCode(), false, false);
                         mc.setScreen(MainMenuScreen.getInstance());
                     },
                     () -> {
-                        ModuleManager.clickGui.setBind(InputUtil.fromTranslationKey("key.keyboard.p").getCode(), false, false);
+                        ModuleManager.clickGui.setBind(InputUtil.fromTranslationKey("key.keyboard.right.shift").getCode(), false, false);
                         mc.stop();
                     }
             );
