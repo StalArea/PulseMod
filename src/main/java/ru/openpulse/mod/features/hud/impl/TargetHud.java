@@ -21,14 +21,14 @@ import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import org.lwjgl.opengl.GL40C;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
-import ru.openpulse.mod.gui.font.FontRenderers;
-import ru.openpulse.mod.gui.hud.HudEditorGui;
 import ru.openpulse.mod.features.hud.HudElement;
 import ru.openpulse.mod.features.modules.client.HudEditor;
 import ru.openpulse.mod.features.modules.combat.Aura;
 import ru.openpulse.mod.features.modules.combat.AutoAnchor;
 import ru.openpulse.mod.features.modules.combat.AutoCrystal;
 import ru.openpulse.mod.features.modules.misc.NameProtect;
+import ru.openpulse.mod.gui.font.FontRenderers;
+import ru.openpulse.mod.gui.hud.HudEditorGui;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.ColorSetting;
 import ru.openpulse.mod.utility.ThunderUtility;
@@ -44,12 +44,14 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ru.openpulse.mod.features.modules.client.ClientSettings.isRu;
+
 public class TargetHud extends HudElement {
     private final Setting<Integer> blurRadius = new Setting<>("BallonBlur", 10, 1, 10);
     private final Setting<Integer> animX = new Setting<>("AnimationX", 0, -2000, 2000);
     private final Setting<Integer> animY = new Setting<>("AnimationY", 0, -2000, 2000);
     private final Setting<HPmodeEn> hpMode = new Setting<>("HP Mode", HPmodeEn.HP);
-    private final Setting<ImageModeEn> imageMode = new Setting<>("Image", ImageModeEn.Anime);
+    private final Setting<ImageModeEn> imageMode = new Setting<>("Image", ImageModeEn.None);
     private final Setting<ModeEn> Mode = new Setting<>("Mode", ModeEn.ThunderHack);
     private final Setting<ColorSetting> color = new Setting<>("Color1", new ColorSetting(-16492289), v -> Mode.getValue() == ModeEn.CelkaPasta);
     private final Setting<ColorSetting> color2 = new Setting<>("Color2", new ColorSetting(-16492289), v -> Mode.getValue() == ModeEn.CelkaPasta);
@@ -81,7 +83,9 @@ public class TargetHud extends HudElement {
         try {
             custom = ThunderUtility.getCustomImg("thud");
         } catch (Exception e) {
-            sendMessage(".minecraft -> ThunderHackRecode -> misc -> images -> thud.png");
+            sendMessage(isRu() ? "thud.png не найден, добавьте его по указанному нижу пути. Режим изменён на None." : "thud.png not found, add it to the specified path below. Mode changed to None.");
+            sendMessage(".minecraft -> PlasmoVoice -> misc -> images -> thud.png");
+            imageMode.setValue(ImageModeEn.None);
         }
     }
 
@@ -428,8 +432,7 @@ public class TargetHud extends HudElement {
         if (target.hurtTime == 8) sentParticles = false;
 
         // Бошка
-        float hurtPercent2 = hurtPercent;
-        headAnimation.setValue(hurtPercent2);
+        headAnimation.setValue(hurtPercent);
 
         if (target instanceof PlayerEntity) {
             RenderSystem.setShaderTexture(0, ((AbstractClientPlayerEntity) target).getSkinTextures().texture());
@@ -534,7 +537,7 @@ public class TargetHud extends HudElement {
     public float getHealth() {
         // Первый в комьюнити хп резольвер. Правда, еж?
         if (target instanceof PlayerEntity ent && (mc.getNetworkHandler() != null && mc.getNetworkHandler().getServerInfo() != null && mc.getNetworkHandler().getServerInfo().address.contains("funtime") || funTimeHP.getValue())) {
-            ScoreboardObjective scoreBoard = null;
+            ScoreboardObjective scoreBoard;
             String resolvedHp = "";
             if ((ent.getScoreboard()).getObjectiveForSlot(ScoreboardDisplaySlot.BELOW_NAME) != null) {
                 scoreBoard = (ent.getScoreboard()).getObjectiveForSlot(ScoreboardDisplaySlot.BELOW_NAME);

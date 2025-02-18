@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static ru.openpulse.mod.features.modules.client.ClientSettings.isRu;
 import static ru.openpulse.mod.utility.render.Render2DEngine.applyOpacity;
 
 public class JumpCircle extends Module {
@@ -54,7 +55,9 @@ public class JumpCircle extends Module {
             try {
                 custom = ThunderUtility.getCustomImg("circle");
             } catch (Exception e) {
-                sendMessage(".minecraft -> ThunderHackRecode -> misc -> images -> circle.png");
+                sendMessage(isRu() ? "circle.png не найден, добавьте его по указанному нижу пути. Режим изменён на Default." : "circle.png not found, add it to the specified path below. Mode changed to Default.");
+                sendMessage(".minecraft -> PlasmoVoice -> misc -> images -> circle.png");
+                mode.setValue(Mode.Default);
             }
         }
 
