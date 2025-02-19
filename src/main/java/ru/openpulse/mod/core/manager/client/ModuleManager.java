@@ -322,7 +322,6 @@ public class ModuleManager implements IManager {
 
         if (ConfigManager.firstLaunch) {
             ModuleManager.notifications.enable();
-            rpc.enable();
             soundFX.enable();
         }
     }

@@ -21,9 +21,9 @@ public final class RPC extends Module {
     private static final DiscordRPC rpc = DiscordRPC.INSTANCE;
     public static Setting<Mode> mode = new Setting<>("Picture", Mode.Recode);
     public static Setting<Boolean> showIP = new Setting<>("ShowIP", true);
-    public static Setting<sMode> smode = new Setting<>("StateMode", sMode.Stats);
-    public static Setting<String> state = new Setting<>("State", "Beta? Recode? NextGen?");
-    public static Setting<Boolean> nickname = new Setting<>("Nickname", true);
+    public static Setting<sMode> smode = new Setting<>("StateMode", sMode.Version);
+    public static Setting<String> state = new Setting<>("State", "Free?");
+    public static Setting<Boolean> nickname = new Setting<>("Nickname", false);
     public static DiscordRichPresence presence = new DiscordRichPresence();
     public static boolean started;
     static String String1 = "none";
@@ -83,9 +83,9 @@ public final class RPC extends Module {
         if (!started) {
             started = true;
             DiscordEventHandlers handlers = new DiscordEventHandlers();
-            rpc.Discord_Initialize("1093053626198523935", handlers, true, "");
+            rpc.Discord_Initialize("1341860447695147008", handlers, true, "");
             presence.startTimestamp = (System.currentTimeMillis() / 1000L);
-            presence.largeImageText = "v" + PulseMod.VERSION + " [" + PulseMod.GITHUB_HASH + "]";
+            presence.largeImageText = "v" + PulseMod.VERSION;
             rpc.Discord_UpdatePresence(presence);
 
             thread = new Thread(() -> {
@@ -97,7 +97,7 @@ public final class RPC extends Module {
                         case Stats ->
                                 presence.state = "Hacks: " + Managers.MODULE.getEnabledModules().size() + " / " + Managers.MODULE.modules.size();
                         case Custom -> presence.state = state.getValue();
-                        case Version -> presence.state = "v" + PulseMod.VERSION +" for mc 1.21";
+                        case Version -> presence.state = "v" + PulseMod.VERSION +" for mc 1.21.1";
                     }
 
                     if (nickname.getValue()) {
@@ -112,7 +112,7 @@ public final class RPC extends Module {
                     presence.button_url_1 = "https://github.com/StalArea/PulseMod/";
 
                     switch (mode.getValue()) {
-                        case Recode -> presence.largeImageKey = "https://i.imgur.com/yY0z2Uq.gif";
+                        case Recode -> presence.largeImageKey = "https://i.imgur.com/GGJ1yNA.gif";
                         case MegaCute ->
                                 presence.largeImageKey = "https://media1.tenor.com/images/6bcbfcc0be97d029613b54f97845bc59/tenor.gif?itemid=26823781";
                         case Custom -> {
@@ -129,7 +129,7 @@ public final class RPC extends Module {
                     } catch (InterruptedException ignored) {
                     }
                 }
-            }, "TH-RPC-Handler");
+            }, "PM-RPC-Handler");
             thread.start();
         }
     }
