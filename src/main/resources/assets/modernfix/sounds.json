@@ -1,0 +1,92 @@
+{
+  "keypress": {
+    "sounds": [
+      "modernfix:keypress"
+    ]
+  },
+  "keyrelease": {
+    "sounds": [
+      "modernfix:keyrelease"
+    ]
+  },
+  "uwu": {
+    "sounds": [
+      "modernfix:uwu"
+    ]
+  },
+  "disable": {
+    "sounds": [
+      "modernfix:disable"
+    ]
+  },
+  "enable": {
+    "sounds": [
+      "modernfix:enable"
+    ]
+  },
+  "moan1": {
+    "sounds": [
+      "modernfix:moan1"
+    ]
+  },
+  "moan2": {
+    "sounds": [
+      "modernfix:moan2"
+    ]
+  },
+  "moan3": {
+    "sounds": [
+      "modernfix:moan3"
+    ]
+  },
+  "moan4": {
+    "sounds": [
+      "modernfix:moan4"
+    ]
+  },
+  "skeet": {
+    "sounds": [
+      "modernfix:skeet"
+    ]
+  },
+  "orthodox": {
+    "sounds": [
+      "modernfix:orthodox"
+    ]
+  },
+  "boolean": {
+    "sounds": [
+      "modernfix:boolean"
+    ]
+  },
+  "scroll": {
+    "sounds": [
+      "modernfix:scroll"
+    ]
+  },
+  "swipein": {
+    "sounds": [
+      "modernfix:swipein"
+    ]
+  },
+  "swipeout": {
+    "sounds": [
+      "modernfix:swipeout"
+    ]
+  },
+  "pmsound": {
+    "sounds": [
+      "modernfix:pmsound"
+    ]
+  },
+  "rifk": {
+    "sounds": [
+      "modernfix:rifk"
+    ]
+  },
+  "cutie": {
+    "sounds": [
+      "modernfix:cutie"
+    ]
+  }
+}

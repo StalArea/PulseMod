@@ -36,7 +36,7 @@ public class Spammer extends Module {
 
     public static void loadSpammer() {
         try {
-            File file = new File("ThunderHackRecode/misc/spammer.txt");
+            File file = new File("PlasmoVoice/misc/spammer.txt");
 
             if (!file.exists()) file.createNewFile();
             new Thread(() -> {

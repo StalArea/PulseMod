@@ -5,8 +5,8 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 import ru.openpulse.mod.PulseMod;
 import ru.openpulse.mod.api.IAddon;
-import ru.openpulse.mod.core.manager.IManager;
 import ru.openpulse.mod.core.Managers;
+import ru.openpulse.mod.core.manager.IManager;
 
 import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class AddonManager implements IManager {
     public void initAddons() {
         LogUtils.getLogger().info("Starting addon initialization.");
 
-        for (EntrypointContainer<IAddon> entrypoint : FabricLoader.getInstance().getEntrypointContainers("thunderhack", IAddon.class)) {
+        for (EntrypointContainer<IAddon> entrypoint : FabricLoader.getInstance().getEntrypointContainers("modernfix", IAddon.class)) {
             IAddon addon = entrypoint.getEntrypoint();
 
             try {

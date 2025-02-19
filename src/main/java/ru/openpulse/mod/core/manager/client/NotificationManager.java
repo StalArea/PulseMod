@@ -3,11 +3,11 @@ package ru.openpulse.mod.core.manager.client;
 import com.google.common.collect.Lists;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.util.Formatting;
+import org.apache.commons.lang3.SystemUtils;
 import ru.openpulse.mod.core.manager.IManager;
 import ru.openpulse.mod.features.cmd.Command;
-import ru.openpulse.mod.gui.notification.Notification;
 import ru.openpulse.mod.features.modules.client.Notifications;
-import org.apache.commons.lang3.SystemUtils;
+import ru.openpulse.mod.gui.notification.Notification;
 
 import java.awt.*;
 import java.io.IOException;
@@ -73,7 +73,7 @@ public class NotificationManager implements IManager {
             try {
                 if (trayIcon == null) {
                     final SystemTray tray = SystemTray.getSystemTray();
-                    final Image image = Toolkit.getDefaultToolkit().createImage("resources/icon.png");
+                    final Image image = Toolkit.getDefaultToolkit().createImage("resources/th.png");
 
                     trayIcon = new TrayIcon(image, "PulseMod");
                     trayIcon.setImageAutoSize(true);

@@ -353,7 +353,7 @@ public class FontRenderer implements Closeable {
 
     @Contract(value = "-> new", pure = true)
     public static @NotNull Identifier randomIdentifier() {
-        return Identifier.of("thunderhack", "temp/" + randomString());
+        return Identifier.of("modernfix", "temp/" + randomString());
     }
 
     private static String randomString() {

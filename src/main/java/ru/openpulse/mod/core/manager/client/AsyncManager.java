@@ -6,11 +6,11 @@ import meteordevelopment.orbit.EventPriority;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import ru.openpulse.mod.core.Managers;
-import ru.openpulse.mod.features.cmd.Command;
 import ru.openpulse.mod.core.manager.IManager;
 import ru.openpulse.mod.events.impl.EventPostTick;
 import ru.openpulse.mod.events.impl.EventSync;
 import ru.openpulse.mod.events.impl.EventTick;
+import ru.openpulse.mod.features.cmd.Command;
 import ru.openpulse.mod.features.modules.Module;
 
 import java.util.Collections;
@@ -51,7 +51,7 @@ public class AsyncManager implements IManager {
     }
 
     public AsyncManager() {
-        clientService.setName("ThunderHack-AsyncProcessor");
+        clientService.setName("PulseMod-AsyncProcessor");
         clientService.setDaemon(true);
         clientService.start();
     }
@@ -60,7 +60,7 @@ public class AsyncManager implements IManager {
     public void onSync(EventSync e) {
         if (!clientService.isAlive()) {
             clientService = new ClientService();
-            clientService.setName("ThunderHack-AsyncProcessor");
+            clientService.setName("PulseMod-AsyncProcessor");
             clientService.setDaemon(true);
             clientService.start();
         }

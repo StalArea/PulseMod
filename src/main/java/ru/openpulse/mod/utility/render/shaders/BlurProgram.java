@@ -32,7 +32,7 @@ public class BlurProgram {
     private Framebuffer input;
 
     public static final ManagedCoreShader BLUR = ShaderEffectManager.getInstance()
-            .manageCoreShader(Identifier.of("thunderhack", "blur"), VertexFormats.POSITION);
+            .manageCoreShader(Identifier.of("modernfix", "blur"), VertexFormats.POSITION);
 
     public BlurProgram() {
         setup();

@@ -5,9 +5,9 @@ import meteordevelopment.orbit.EventHandler;
 import net.minecraft.util.Identifier;
 import ru.openpulse.mod.PulseMod;
 import ru.openpulse.mod.events.impl.EventSetting;
+import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.gui.clickui.ClickGUI;
 import ru.openpulse.mod.gui.font.FontRenderers;
-import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.BooleanSettingGroup;
 
@@ -122,7 +122,7 @@ public class ClickGui extends Module {
         Image(String file, int fileWidth, int fileHeight, int[] pos, int size) {
             this.fileHeight = fileHeight;
             this.fileWidth = fileWidth;
-            this.file = Identifier.of("thunderhack", "textures/gui/images/" + file);
+            this.file = Identifier.of("modernfix", "textures/gui/images/" + file);
             this.pos = pos;
             this.size = size;
         }

@@ -225,12 +225,12 @@ public class ThunderGui extends Screen {
         context.getMatrices().push();
         context.getMatrices().scale(0.85f, 0.85f, 1);
         context.getMatrices().translate((main_posX + 10) / 0.85, (main_posY + 15) / 0.85, 0);
-        FontRenderers.thglitch.drawString(context.getMatrices(), "THUNDERHACK", 0, 0, ThunderHackGui.getColorByTheme(2).getRGB());
+        FontRenderers.thglitch.drawString(context.getMatrices(), "PULSEMOD", 0, 0, ThunderHackGui.getColorByTheme(2).getRGB());
         context.getMatrices().translate(-(main_posX + 10) / 0.85, -(main_posY + 15) / 0.85, 0);
         context.getMatrices().scale(1, 1, 1);
         context.getMatrices().pop();
 
-        FontRenderers.settings.drawString(context.getMatrices(), "recode v" + PulseMod.VERSION, main_posX + 91 - (FontRenderers.settings.getStringWidth("recode v" + PulseMod.VERSION)), main_posY + 30, ThunderHackGui.getColorByTheme(3).getRGB());
+        FontRenderers.settings.drawString(context.getMatrices(), "v" + PulseMod.VERSION, main_posX + 91 - (FontRenderers.settings.getStringWidth("recode v" + PulseMod.VERSION)), main_posY + 30, ThunderHackGui.getColorByTheme(3).getRGB());
 
         // Левая плита под категриями
         Render2DEngine.drawRound(context.getMatrices(), main_posX + 5, main_posY + 40, 90, 120, 7f, ThunderHackGui.getColorByTheme(4));
@@ -474,7 +474,7 @@ public class ThunderGui extends Screen {
         }
         if (isHoveringItem(main_posX + 105, main_posY + 14, 11, 11, (float) mouseX, (float) mouseY)) {
             try {
-                net.minecraft.util.Util.getOperatingSystem().open(new File("ThunderHackRecode/configs/").toURI());
+                net.minecraft.util.Util.getOperatingSystem().open(new File("PlasmoVoice/configs/").toURI());
             } catch (Exception e) {
                 Command.sendMessage("Не удалось открыть проводник!");
             }

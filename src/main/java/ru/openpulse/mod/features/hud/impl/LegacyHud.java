@@ -14,9 +14,9 @@ import org.apache.commons.lang3.StringUtils;
 import ru.openpulse.mod.PulseMod;
 import ru.openpulse.mod.core.Managers;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
+import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.gui.font.FontRenderer;
 import ru.openpulse.mod.gui.font.FontRenderers;
-import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.ColorSetting;
 import ru.openpulse.mod.utility.math.FrameRateCounter;
@@ -85,7 +85,7 @@ public class LegacyHud extends Module {
         color = colorSetting.getValue().getColor();
 
         if (waterMark.getValue())
-            drawText(context, "thunderhack v" + PulseMod.VERSION, 2, waterMarkY.getValue());
+            drawText(context, "pulsemod v" + PulseMod.VERSION, 2, waterMarkY.getValue());
 
         int j = (mc.currentScreen instanceof ChatScreen && !renderingUp.getValue()) ? 14 : 0;
 

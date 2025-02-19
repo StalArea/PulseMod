@@ -31,7 +31,7 @@ import ru.openpulse.mod.gui.font.FontRenderers;
 import ru.openpulse.mod.gui.hud.HudEditorGui;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.ColorSetting;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 import ru.openpulse.mod.utility.Timer;
 import ru.openpulse.mod.utility.math.MathUtility;
 import ru.openpulse.mod.utility.render.Render2DEngine;
@@ -81,7 +81,7 @@ public class TargetHud extends HudElement {
     @Override
     public void onEnable() {
         try {
-            custom = ThunderUtility.getCustomImg("thud");
+            custom = PulseUtility.getCustomImg("thud");
         } catch (Exception e) {
             sendMessage(isRu() ? "thud.png не найден, добавьте его по указанному нижу пути. Режим изменён на None." : "thud.png not found, add it to the specified path below. Mode changed to None.");
             sendMessage(".minecraft -> PlasmoVoice -> misc -> images -> thud.png");

@@ -2,7 +2,7 @@ package ru.openpulse.mod.utility.render.shaders;
 
 public class TextureColorProgram {/*
     public TextureColorProgram() {
-        super(Identifier.of("thunderhack", "position_tex_color2"), VertexFormats.POSITION);
+        super(Identifier.of("modernfix", "position_tex_color2"), VertexFormats.POSITION);
     }
 
     @Override

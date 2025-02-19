@@ -17,10 +17,10 @@ import ru.openpulse.mod.PulseMod;
 import ru.openpulse.mod.core.Managers;
 import ru.openpulse.mod.core.manager.client.CommandManager;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
-import ru.openpulse.mod.gui.notification.Notification;
 import ru.openpulse.mod.features.modules.client.ClientSettings;
-import ru.openpulse.mod.features.modules.client.Windows;
 import ru.openpulse.mod.features.modules.client.Unhook;
+import ru.openpulse.mod.features.modules.client.Windows;
+import ru.openpulse.mod.gui.notification.Notification;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.Bind;
 
@@ -132,7 +132,7 @@ public abstract class Module {
         if (isOn()) PulseMod.EVENT_BUS.subscribe(this);
         if (fullNullCheck()) return;
 
-        LogUtils.getLogger().info("[ThunderHack] enabled " + this.getName());
+        LogUtils.getLogger().info("[PulseMod] enabled " + this.getName());
         Managers.MODULE.sortModules();
 
         if (!ignoreSoundList.contains(getDisplayName())) {
@@ -163,7 +163,7 @@ public abstract class Module {
 
         onDisable();
 
-        LOGGER.info("[ThunderHack] disabled {}", getName());
+        LOGGER.info("[PulseMod] disabled {}", getName());
 
         if (!ignoreSoundList.contains(getDisplayName())) {
             NOTIFICATION.publicity(getDisplayName(), isRu() ? "Модуль выключен!" : "Was Disabled!", 2, Notification.Type.DISABLED);

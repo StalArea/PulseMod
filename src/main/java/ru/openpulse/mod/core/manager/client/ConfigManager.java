@@ -5,8 +5,8 @@ import com.mojang.logging.LogUtils;
 import org.jetbrains.annotations.NotNull;
 import ru.openpulse.mod.PulseMod;
 import ru.openpulse.mod.core.Managers;
-import ru.openpulse.mod.features.cmd.Command;
 import ru.openpulse.mod.core.manager.IManager;
+import ru.openpulse.mod.features.cmd.Command;
 import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.*;
@@ -280,7 +280,7 @@ public class ConfigManager implements IManager {
                     setting.setValue((value == null) ? setting.getDefaultValue() : value);
                 }
             } catch (Exception e) {
-                LogUtils.getLogger().warn("[Thunderhack] Module: " + module.getName() + " Setting: " + setting.getName() + " Error: ");
+                LogUtils.getLogger().warn("[PulseMod] Module: " + module.getName() + " Setting: " + setting.getName() + " Error: ");
                 e.printStackTrace();
             }
         }
@@ -309,7 +309,7 @@ public class ConfigManager implements IManager {
                     }
                 }
             } catch (Exception e) {
-                LogUtils.getLogger().warn("[Thunderhack] Module: " + module.getName() + " Setting: " + setting.getName() + " Error: ");
+                LogUtils.getLogger().warn("[PulseMod] Module: " + module.getName() + " Setting: " + setting.getName() + " Error: ");
                 e.printStackTrace();
             }
         }

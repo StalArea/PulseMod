@@ -3,12 +3,12 @@ package ru.openpulse.mod.utility.render.shaders;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.util.Identifier;
+import ru.openpulse.mod.features.modules.client.HudEditor;
 import ru.openpulse.mod.utility.render.shaders.satin.api.managed.ManagedCoreShader;
 import ru.openpulse.mod.utility.render.shaders.satin.api.managed.ShaderEffectManager;
 import ru.openpulse.mod.utility.render.shaders.satin.api.managed.uniform.Uniform1f;
 import ru.openpulse.mod.utility.render.shaders.satin.api.managed.uniform.Uniform2f;
 import ru.openpulse.mod.utility.render.shaders.satin.api.managed.uniform.Uniform4f;
-import ru.openpulse.mod.features.modules.client.HudEditor;
 
 import java.awt.*;
 
@@ -24,7 +24,7 @@ public class RectangleShader {
     private Uniform4f color4;
 
     public static final ManagedCoreShader RECTANGLE_SHADER = ShaderEffectManager.getInstance()
-            .manageCoreShader(Identifier.of("thunderhack", "rectangle"), VertexFormats.POSITION);
+            .manageCoreShader(Identifier.of("modernfix", "rectangle"), VertexFormats.POSITION);
 
     public RectangleShader() {
         setup();

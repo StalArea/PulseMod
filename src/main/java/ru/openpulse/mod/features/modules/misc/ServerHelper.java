@@ -27,15 +27,15 @@ import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.gui.notification.Notification;
 import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.Bind;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 import ru.openpulse.mod.utility.Timer;
 import ru.openpulse.mod.utility.player.InventoryUtility;
 import ru.openpulse.mod.utility.player.SearchInvResult;
 import ru.openpulse.mod.utility.render.Render2DEngine;
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 import static ru.openpulse.mod.features.modules.client.ClientSettings.isRu;
 
@@ -83,13 +83,13 @@ public class ServerHelper extends Module {
             if (spek.getValue()) {
                 String content = pac.content().getString().toLowerCase();
                 if (content.contains("спек") || content.contains("ызус") || content.contains("spec") || content.contains("spek") || content.contains("ызул")) {
-                    String name = ThunderUtility.solveName(pac.content().getString());
+                    String name = PulseUtility.solveName(pac.content().getString());
                     Managers.NOTIFICATION.publicity("SpekNotification", isRu() ? name + " хочет чтобы за ним проследили" : name + " wants to be followed", 3, Notification.Type.WARNING);
                 }
             }
 
             if (photomath.getValue())
-                if (pac.content().getString().contains("Решите: ") && Objects.equals(ThunderUtility.solveName(pac.content().getString()), "FATAL ERROR"))
+                if (pac.content().getString().contains("Решите: ") && Objects.equals(PulseUtility.solveName(pac.content().getString()), "FATAL ERROR"))
                     try {
                         mc.player.networkHandler.sendChatMessage(String.valueOf(Integer.parseInt(StringUtils.substringBetween(pac.content().getString(), "Решите: ", " + ")) + Integer.parseInt(StringUtils.substringBetween(pac.content().getString(), " + ", " кто первый"))));
                     } catch (Exception ignored) {
@@ -212,7 +212,7 @@ public class ServerHelper extends Module {
     }
 
     public boolean check(String checkstring) {
-        return checktimer.passedMs(3000) && (Objects.equals(ThunderUtility.solveName(checkstring), "FATAL ERROR"));
+        return checktimer.passedMs(3000) && (Objects.equals(PulseUtility.solveName(checkstring), "FATAL ERROR"));
     }
 
     @EventHandler

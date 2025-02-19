@@ -12,7 +12,7 @@ import org.joml.Matrix4f;
 import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.features.modules.client.HudEditor;
 import ru.openpulse.mod.setting.Setting;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 import ru.openpulse.mod.utility.Timer;
 import ru.openpulse.mod.utility.render.Render2DEngine;
 import ru.openpulse.mod.utility.render.TextureStorage;
@@ -43,7 +43,7 @@ public class JumpCircle extends Module {
     @Override
     public void onEnable() {
         try {
-            custom = ThunderUtility.getCustomImg("circle");
+            custom = PulseUtility.getCustomImg("circle");
         } catch (Exception e) {
             sendMessage(e.getMessage());
         }
@@ -53,7 +53,7 @@ public class JumpCircle extends Module {
     public void onUpdate() {
         if (mode.is(Mode.Custom) && custom == null) {
             try {
-                custom = ThunderUtility.getCustomImg("circle");
+                custom = PulseUtility.getCustomImg("circle");
             } catch (Exception e) {
                 sendMessage(isRu() ? "circle.png не найден, добавьте его по указанному нижу пути. Режим изменён на Default." : "circle.png not found, add it to the specified path below. Mode changed to Default.");
                 sendMessage(".minecraft -> PlasmoVoice -> misc -> images -> circle.png");

@@ -10,8 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.PotionItem;
 import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.NotNull;
-import ru.openpulse.mod.features.cmd.Command;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
+import ru.openpulse.mod.features.cmd.Command;
 
 import java.io.*;
 
@@ -19,7 +19,7 @@ import static com.mojang.brigadier.Command.SINGLE_SUCCESS;
 import static ru.openpulse.mod.features.modules.client.ClientSettings.isRu;
 
 public class KitCommand extends Command {
-    final static private String PATH = "ThunderHackRecode/misc/AutoGear.json";
+    final static private String PATH = "PlasmoVoice/misc/AutoGear.json";
 
     public KitCommand() {
         super("kit");

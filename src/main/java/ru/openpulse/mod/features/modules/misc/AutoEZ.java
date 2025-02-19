@@ -8,7 +8,7 @@ import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.features.modules.combat.Aura;
 import ru.openpulse.mod.features.modules.combat.AutoCrystal;
 import ru.openpulse.mod.setting.Setting;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -23,15 +23,12 @@ public final class AutoEZ extends Module {
     public Setting<Boolean> global = new Setting<>("global", true);
 
     String[] EZ = new String[]{
-            "%player% АНБРЕЙН ГЕТАЙ ТХ РЕКОД",
             "%player% ТВОЯ МАТЬ БУДЕТ СЛЕДУЮЩЕЙ))))",
-            "%player% БИЧАРА БЕЗ ТХ",
             "%player% ЧЕ ТАК БЫСТРО СЛИЛСЯ ТО А?",
             "%player% ПЛАЧЬ",
             "%player% УПССС ЗАБЫЛ КИЛЛКУ ВЫРУБИТЬ",
             "ОДНОКЛЕТОЧНЫЙ %player% БЫЛ ВПЕНЕН",
             "%player% ИЗИ БЛЯТЬ АХААХАХАХАХААХ",
-            "%player% БОЖЕ МНЕ ТЕБЯ ЖАЛКО ВГЕТАЙ ТХ",
             "%player% ОПРАВДЫВАЙСЯ В ХУЙ ЧЕ СДОХ ТО)))",
             "%player% СПС ЗА ОТСОС)))"
     };
@@ -46,7 +43,7 @@ public final class AutoEZ extends Module {
 
     public static void loadEZ() {
         try {
-            File file = new File("ThunderHackRecode/misc/AutoEZ.txt");
+            File file = new File("PlasmoVoice/misc/AutoEZ.txt");
             if (!file.exists()) file.createNewFile();
             new Thread(() -> {
                 try {
@@ -100,7 +97,7 @@ public final class AutoEZ extends Module {
         if (e.getPacket() instanceof GameMessageS2CPacket) {
             final GameMessageS2CPacket packet = e.getPacket();
             if (packet.content().getString().contains("Вы убили игрока")) {
-                String name = ThunderUtility.solveName(packet.content().getString());
+                String name = PulseUtility.solveName(packet.content().getString());
                 if (Objects.equals(name, "FATAL ERROR")) return;
 
                 String finalword;

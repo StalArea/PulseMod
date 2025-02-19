@@ -29,11 +29,11 @@ import ru.openpulse.mod.setting.Setting;
 import ru.openpulse.mod.setting.impl.ColorSetting;
 import ru.openpulse.mod.setting.impl.ItemSelectSetting;
 import ru.openpulse.mod.utility.Timer;
-import ru.openpulse.mod.utility.world.ExplosionUtility;
 import ru.openpulse.mod.utility.player.InteractionUtility;
 import ru.openpulse.mod.utility.player.PlayerUtility;
 import ru.openpulse.mod.utility.render.Render2DEngine;
 import ru.openpulse.mod.utility.render.Render3DEngine;
+import ru.openpulse.mod.utility.world.ExplosionUtility;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class Nuker extends Module {
     @Override
     public void onEnable() {
         nukerThread = new NukerThread();
-        nukerThread.setName("ThunderHack-NukerThread");
+        nukerThread.setName("PulseMod-NukerThread");
         nukerThread.setDaemon(true);
         nukerThread.start();
     }
@@ -82,7 +82,7 @@ public class Nuker extends Module {
     public void onUpdate() {
         if (!nukerThread.isAlive()) {
             nukerThread = new NukerThread();
-            nukerThread.setName("ThunderHack-NukerThread");
+            nukerThread.setName("PulseMod-NukerThread");
             nukerThread.setDaemon(true);
             nukerThread.start();
         }

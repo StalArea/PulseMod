@@ -7,9 +7,9 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import ru.openpulse.mod.gui.clickui.ClickGUI;
 import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.features.modules.client.HudEditor;
+import ru.openpulse.mod.gui.clickui.ClickGUI;
 import ru.openpulse.mod.utility.render.Render2DEngine;
 import ru.openpulse.mod.utility.render.TextureStorage;
 
@@ -24,7 +24,7 @@ public class WindowsScreen extends Screen {
     private List<WindowBase> windows = new ArrayList<>();
     public static WindowBase lastClickedWindow;
     public static WindowBase draggingWindow;
-    private static final Identifier clickGuiIcon = Identifier.of("thunderhack", "textures/gui/elements/clickgui.png");
+    private static final Identifier clickGuiIcon = Identifier.of("modernfix", "textures/gui/elements/clickgui.png");
 
     public WindowsScreen(WindowBase... windows) {
         super(Text.of("THWindows"));

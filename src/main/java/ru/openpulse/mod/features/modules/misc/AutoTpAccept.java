@@ -6,11 +6,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
 import ru.openpulse.mod.core.Managers;
 import ru.openpulse.mod.events.impl.PacketEvent;
-import ru.openpulse.mod.gui.font.FontRenderers;
 import ru.openpulse.mod.features.modules.Module;
 import ru.openpulse.mod.features.modules.client.HudEditor;
+import ru.openpulse.mod.gui.font.FontRenderers;
 import ru.openpulse.mod.setting.Setting;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 import ru.openpulse.mod.utility.math.MathUtility;
 
 import static ru.openpulse.mod.features.modules.client.ClientSettings.isRu;
@@ -34,7 +34,7 @@ public class AutoTpAccept extends Module {
             final GameMessageS2CPacket packet = event.getPacket();
             if (packet.content().getString().contains("телепортироваться") || packet.content().getString().contains("tpaccept")) {
                 if (onlyFriends.getValue()) {
-                    if (Managers.FRIEND.isFriend(ThunderUtility.solveName(packet.content().getString()))) {
+                    if (Managers.FRIEND.isFriend(PulseUtility.solveName(packet.content().getString()))) {
                         if (!duo.getValue()) acceptRequest(packet.content().getString());
                         else
                             tpTask = new TpTask(() -> acceptRequest(packet.content.getString()), System.currentTimeMillis());
@@ -69,7 +69,7 @@ public class AutoTpAccept extends Module {
     }
 
     public void acceptRequest(String name) {
-        if (grief.getValue()) mc.getNetworkHandler().sendChatCommand("tpaccept " + ThunderUtility.solveName(name));
+        if (grief.getValue()) mc.getNetworkHandler().sendChatCommand("tpaccept " + PulseUtility.solveName(name));
         else mc.getNetworkHandler().sendChatCommand("tpaccept");
     }
 

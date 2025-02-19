@@ -127,7 +127,7 @@ public class CreditsScreen extends Screen {
             NativeImageBackedTexture nIBT = getAvatarFromURL("https://cdn.discordapp.com/avatars/" + name + ".png?size=96");
 
             if (nIBT != null) {
-                return MinecraftClient.getInstance().getTextureManager().registerDynamicTexture("th-contributors-" + (int) MathUtility.random(0, 1000000), nIBT);
+                return MinecraftClient.getInstance().getTextureManager().registerDynamicTexture("pm-contributors-" + (int) MathUtility.random(0, 1000000), nIBT);
             } else {
                 return null;
             }

@@ -2,9 +2,6 @@ package ru.openpulse.mod.core.manager.client;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import ru.openpulse.mod.utility.render.Render3DEngine;
-import ru.openpulse.mod.utility.render.shaders.satin.api.managed.ManagedShaderEffect;
-import ru.openpulse.mod.utility.render.shaders.satin.api.managed.ShaderEffectManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.Framebuffer;
 import net.minecraft.client.gl.PostEffectProcessor;
@@ -14,6 +11,9 @@ import org.lwjgl.opengl.GL30C;
 import ru.openpulse.mod.core.manager.IManager;
 import ru.openpulse.mod.features.modules.render.Shaders;
 import ru.openpulse.mod.utility.interfaces.IShaderEffect;
+import ru.openpulse.mod.utility.render.Render3DEngine;
+import ru.openpulse.mod.utility.render.shaders.satin.api.managed.ManagedShaderEffect;
+import ru.openpulse.mod.utility.render.shaders.satin.api.managed.ShaderEffectManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -163,13 +163,13 @@ public class ShaderManager implements IManager {
     }
 
     public void reloadShaders() {
-        DEFAULT = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/outline.json"));
-        SMOKE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/smoke.json"));
-        GRADIENT = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/gradient.json"));
-        SNOW = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/snow.json"));
-        FADE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/fade.json"));
+        DEFAULT = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/outline.json"));
+        SMOKE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/smoke.json"));
+        GRADIENT = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/gradient.json"));
+        SNOW = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/snow.json"));
+        FADE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/fade.json"));
 
-        FADE_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/fade.json"), managedShaderEffect -> {
+        FADE_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/fade.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -177,7 +177,7 @@ public class ShaderManager implements IManager {
             ((IShaderEffect) effect).addFakeTargetHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        DEFAULT_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/outline.json"), managedShaderEffect -> {
+        DEFAULT_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/outline.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -185,7 +185,7 @@ public class ShaderManager implements IManager {
             ((IShaderEffect) effect).addFakeTargetHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        SMOKE_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/smoke.json"), managedShaderEffect -> {
+        SMOKE_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/smoke.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -193,7 +193,7 @@ public class ShaderManager implements IManager {
             ((IShaderEffect) effect).addFakeTargetHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        GRADIENT_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/gradient.json"), managedShaderEffect -> {
+        GRADIENT_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/gradient.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -201,7 +201,7 @@ public class ShaderManager implements IManager {
             ((IShaderEffect) effect).addFakeTargetHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        SNOW_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("thunderhack", "shaders/post/snow.json"), managedShaderEffect -> {
+        SNOW_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("modernfix", "shaders/post/snow.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 

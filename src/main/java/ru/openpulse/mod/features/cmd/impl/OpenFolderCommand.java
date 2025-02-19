@@ -18,7 +18,7 @@ public class OpenFolderCommand extends Command {
     @Override
     public void executeBuild(@NotNull LiteralArgumentBuilder<CommandSource> builder) {
         builder.executes(context -> {
-            Util.getOperatingSystem().open(new File("ThunderHackRecode/configs/"));
+            Util.getOperatingSystem().open(new File("PlasmoVoice/configs/"));
             return SINGLE_SUCCESS;
         });
     }

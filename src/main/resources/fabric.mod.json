@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
-  "id": "thunderhack",
-  "version": "1.7",
-  "icon": "icon.png",
-  "name": "ThunderHack",
-  "description": "Player Assistance Mod",
+  "id": "modernfix",
+  "version": "5.20.2+mc1.21.1",
+  "name": "ModernFix",
+  "description": "Egregious, yet effective performance improvements for modern Minecraft",
   "authors": [
-    {
-      "name": "pan4ur",
-      "contact": {
-        "discord": "pan4ur"
-      }
-    },
-    {
-      "name": "06ED",
-      "contact": {
-        "discord": "dinner_enjoyer"
+    "embeddedt"
+  ],
+  "contact": {
+    "sources": "https://github.com/embeddedt/ModernFix",
+    "homepage": "https://modrinth.com/mod/modernfix",
+    "issues": "https://github.com/embeddedt/ModernFix/issues"
+  },
+  "license": "LGPL-3.0",
+  "icon": "icon.png",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.kofi": "https://ko-fi.com/embeddedt",
+        "modmenu.github_releases": "https://github.com/embeddedt/ModernFix/releases",
+        "modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/modernfix"
       }
     }
-  ],
-  "license": "GNU General Public License v3.0",
-  "accessWidener": "thunderhack.accesswidener",
-  "environment": "client",
+  },
+  "environment": "*",
+  "accessWidener": "pulsemod.accesswidener",
   "entrypoints": {
     "main": [
       "ru.openpulse.mod.PulseMod"
     ]
   },
-  "contact": {
-    "sources": "https://github.com/Pan4ur/ThunderHack-Recode",
-    "homepage": "https://thunderhack-site.vercel.app",
-    "issues": "https://github.com/Pan4ur/ThunderHack-Recode/issues"
-  },
   "mixins": [
-    "thunderhack.mixins.json"
+    "pulsemod.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.11",

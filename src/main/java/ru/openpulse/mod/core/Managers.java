@@ -8,7 +8,7 @@ import ru.openpulse.mod.core.manager.player.FriendManager;
 import ru.openpulse.mod.core.manager.player.PlayerManager;
 import ru.openpulse.mod.core.manager.world.HoleManager;
 import ru.openpulse.mod.core.manager.world.WayPointManager;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 
 import static ru.openpulse.mod.PulseMod.EVENT_BUS;
 
@@ -54,9 +54,9 @@ public class Managers {
         SOUND.registerSounds();
 
         ASYNC.run(() -> {
-            ThunderUtility.syncContributors();
-            ThunderUtility.parseStarGazer();
-            ThunderUtility.parseCommits();
+            PulseUtility.syncContributors();
+            PulseUtility.parseStarGazer();
+            PulseUtility.parseCommits();
         });
     }
 

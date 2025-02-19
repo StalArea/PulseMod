@@ -10,18 +10,16 @@ import net.minecraft.client.gui.screen.world.SelectWorldScreen;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Util;
 import org.jetbrains.annotations.NotNull;
 import ru.openpulse.mod.api.IAddon;
 import ru.openpulse.mod.core.Managers;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
 import ru.openpulse.mod.gui.font.FontRenderers;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 import ru.openpulse.mod.utility.render.Render2DEngine;
 import ru.openpulse.mod.utility.render.TextureStorage;
 
 import java.awt.*;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -85,7 +83,7 @@ public class MainMenuScreen extends Screen {
 
         boolean hoveredLogo = Render2DEngine.isHovered(mouseX, mouseY, (int) (halfOfWidth - 120), (int) (halfOfHeight - 130), 210, 50);
 
-        FontRenderers.thglitchBig.drawCenteredString(context.getMatrices(), "THUNDERHACK", (int) (halfOfWidth), (int) (halfOfHeight - 120), new Color(255, 255, 255, hoveredLogo ? 230 : 180).getRGB());
+        FontRenderers.thglitchBig.drawCenteredString(context.getMatrices(), "PULSEMOD", (int) (halfOfWidth), (int) (halfOfHeight - 120), new Color(255, 255, 255, hoveredLogo ? 230 : 180).getRGB());
 
         boolean hovered = Render2DEngine.isHovered(mouseX, mouseY, halfOfWidth - 50, halfOfHeight + 70, 100, 10);
 
@@ -97,13 +95,8 @@ public class MainMenuScreen extends Screen {
         context.drawTexture(TextureStorage.thTeam, mc.getWindow().getScaledWidth() - 40, mc.getWindow().getScaledHeight() - 40, 30, 30, 0, 0, 30, 30, 30, 30);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
 
-        Render2DEngine.drawHudBase(context.getMatrices(), mc.getWindow().getScaledWidth() - 80, mc.getWindow().getScaledHeight() - 40, 30, 30, 5, Render2DEngine.isHovered(mouseX, mouseY, mc.getWindow().getScaledWidth() - 80, mc.getWindow().getScaledHeight() - 40, 30, 30) ? 0.7f : 1f);
-        RenderSystem.setShaderColor(1f, 1f, 1f, Render2DEngine.isHovered(mouseX, mouseY, mc.getWindow().getScaledWidth() - 80, mc.getWindow().getScaledHeight() - 40, 30, 30) ? 0.7f : 1f);
-        context.drawTexture(TextureStorage.donation, mc.getWindow().getScaledWidth() - 79, mc.getWindow().getScaledHeight() - 39, 28, 28, 0, 0, 30, 30, 30, 30);
-        RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
-
         int offsetY = 10;
-        for (String change : ThunderUtility.changeLog) {
+        for (String change : PulseUtility.changeLog) {
             String prefix = getPrefix(change);
             FontRenderers.sf_medium.drawString(context.getMatrices(), prefix, 10, offsetY, Render2DEngine.applyOpacity(-1, 0.4f));
             offsetY += 10;
@@ -159,11 +152,8 @@ public class MainMenuScreen extends Screen {
         if (Render2DEngine.isHovered(mouseX, mouseY, mc.getWindow().getScaledWidth() - 40, mc.getWindow().getScaledHeight() - 40, 40, 40))
             mc.setScreen(CreditsScreen.getInstance());
 
-        if (Render2DEngine.isHovered(mouseX, mouseY, mc.getWindow().getScaledWidth() - 90, mc.getWindow().getScaledHeight() - 40, 40, 40))
-            Util.getOperatingSystem().open(URI.create("https://www.donationalerts.com/r/06ed/"));
-
-        if (Render2DEngine.isHovered(mouseX, mouseY, (int) (halfOfWidth - 157), (int) (halfOfHeight - 140), 300, 70))
-            Util.getOperatingSystem().open(URI.create("https://thunderhack-site.vercel.app/"));
+//        if (Render2DEngine.isHovered(mouseX, mouseY, (int) (halfOfWidth - 157), (int) (halfOfHeight - 140), 300, 70))
+//            Util.getOperatingSystem().open(URI.create("https://thunderhack-site.vercel.app/"));
 
         return super.mouseClicked(mouseX, mouseY, button);
     }

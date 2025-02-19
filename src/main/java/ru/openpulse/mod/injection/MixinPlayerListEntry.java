@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
 import ru.openpulse.mod.utility.OptifineCapes;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -58,16 +58,16 @@ public class MixinPlayerListEntry {
                     String name = colune.split(":")[0];
                     String cape = colune.split(":")[1];
                     if (Objects.equals(profile.getName(), name)) {
-                        customCapeTexture = Identifier.of("thunderhack", "textures/capes/" + cape + ".png");
+                        customCapeTexture = Identifier.of("modernfix", "textures/capes/" + cape + ".png");
                         return;
                     }
                 }
             } catch (Exception ignored) {
             }
 
-            for (String str : ThunderUtility.starGazer) {
+            for (String str : PulseUtility.starGazer) {
                 if (profile.getName().toLowerCase().equals(str.toLowerCase()))
-                    customCapeTexture = Identifier.of("thunderhack", "textures/capes/starcape.png");
+                    customCapeTexture = Identifier.of("modernfix", "textures/capes/starcape.png");
             }
 
             if (ModuleManager.optifineCapes.isEnabled())

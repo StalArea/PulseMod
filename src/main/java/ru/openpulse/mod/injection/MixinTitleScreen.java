@@ -8,11 +8,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ru.openpulse.mod.gui.misc.DialogScreen;
-import ru.openpulse.mod.gui.mainmenu.MainMenuScreen;
-import ru.openpulse.mod.utility.render.TextureStorage;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
 import ru.openpulse.mod.features.modules.client.ClientSettings;
+import ru.openpulse.mod.gui.mainmenu.MainMenuScreen;
+import ru.openpulse.mod.gui.misc.DialogScreen;
+import ru.openpulse.mod.utility.render.TextureStorage;
 
 import static ru.openpulse.mod.features.modules.Module.mc;
 import static ru.openpulse.mod.features.modules.client.ClientSettings.isRu;
@@ -31,7 +31,7 @@ public class MixinTitleScreen extends Screen {
         if (ModuleManager.clickGui.getBind().getKey() == -1) {
             DialogScreen dialogScreen2 = new DialogScreen(
                     TextureStorage.cutie,
-                    isRu() ? "Спасибо что скачали ThunderHack!" : "Thank you for downloading ThunderHack!",
+                    isRu() ? "Спасибо что скачали PulseMod!" : "Thank you for downloading PulseMod!",
                     isRu() ? "Меню с функциями клиента открывается на клавишу - RShift" : "Menu with client modules is opened with the key - P",
                     isRu() ? "Зайти в майн" : "Join on minecraft",
                     isRu() ? "Закрыть майн" : "Close minecraft",
@@ -68,7 +68,7 @@ public class MixinTitleScreen extends Screen {
 //                        if (confirm) Util.getOperatingSystem().open(URI.create("https://github.com/StalArea/PulseMod/releases/download/latest/..."));
 //                        else mc.stop();
 //                    },
-//                    Text.of(Formatting.RED + "You are using an outdated version of ThunderHack Recode"), Text.of("Please update to the latest release"), Text.of("Download"), Text.of("Quit Game")));
+//                    Text.of(Formatting.RED + "You are using an outdated version of PulseMod"), Text.of("Please update to the latest release"), Text.of("Download"), Text.of("Quit Game")));
 //        }
     }
 }

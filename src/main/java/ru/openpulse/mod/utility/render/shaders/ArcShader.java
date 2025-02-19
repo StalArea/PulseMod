@@ -25,7 +25,7 @@ public class ArcShader {
     private Uniform1f end;
 
     public static final ManagedCoreShader ARC = ShaderEffectManager.getInstance()
-            .manageCoreShader(Identifier.of("thunderhack", "arc"), VertexFormats.POSITION);
+            .manageCoreShader(Identifier.of("modernfix", "arc"), VertexFormats.POSITION);
 
     public ArcShader() {
         setup();

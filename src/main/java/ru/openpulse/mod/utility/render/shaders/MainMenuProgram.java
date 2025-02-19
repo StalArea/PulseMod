@@ -19,7 +19,7 @@ public class MainMenuProgram {
     public static float time_ = 10000f;
 
     public static final ManagedCoreShader MAIN_MENU = ShaderEffectManager.getInstance()
-            .manageCoreShader(Identifier.of("thunderhack", "mainmenu"), VertexFormats.POSITION);
+            .manageCoreShader(Identifier.of("modernfix", "mainmenu"), VertexFormats.POSITION);
 
     public MainMenuProgram() {
         setup();

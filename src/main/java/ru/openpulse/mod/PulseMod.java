@@ -14,7 +14,7 @@ import ru.openpulse.mod.core.Managers;
 import ru.openpulse.mod.core.hooks.ManagerShutdownHook;
 import ru.openpulse.mod.core.hooks.ModuleShutdownHook;
 import ru.openpulse.mod.core.manager.client.ModuleManager;
-import ru.openpulse.mod.utility.ThunderUtility;
+import ru.openpulse.mod.utility.PulseUtility;
 import ru.openpulse.mod.utility.render.Render2DEngine;
 
 import java.awt.*;
@@ -23,8 +23,8 @@ import java.lang.invoke.MethodHandles;
 public class PulseMod implements ModInitializer {
     public static final ModMetadata MOD_META;
 
-    public static final String MOD_ID = "thunderhack";
-    public static final String VERSION = "1.7b2407";
+    public static final String MOD_ID = "modernfix";
+    public static final String VERSION = "1.0";
     public static String GITHUB_HASH = "0";
     public static String BUILD_DATE = "1 Jan 1970";
 
@@ -55,9 +55,9 @@ public class PulseMod implements ModInitializer {
         mc = MinecraftClient.getInstance();
         initTime = System.currentTimeMillis();
 
-        BUILD_DATE = ThunderUtility.readManifestField("Build-Timestamp");
-        GITHUB_HASH = ThunderUtility.readManifestField("Git-Commit");
-        ThunderUtility.syncVersion();
+        BUILD_DATE = PulseUtility.readManifestField("Build-Timestamp");
+        GITHUB_HASH = PulseUtility.readManifestField("Git-Commit");
+        PulseUtility.syncVersion();
 
         EVENT_BUS.registerLambdaFactory("ru.openpulse.mod",
                 (lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
